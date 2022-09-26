@@ -8,8 +8,8 @@ Contributors:      flixos90, gidomanders
 Donate link:       https://leaves-and-love.net/wordpress-plugins/
 Requires at least: 3.6
 Tested up to:      4.9
-Stable tag:        1.4.8
-Version:           1.4.8
+Stable tag:        1.4.9
+Version:           1.4.9
 License:           GNU General Public License v2 (or later)
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              contact form 7, wpcf7, bootstrap, bootstrap 3, bootstrap framework, addon, contact form 7 addon, contact form, cf7bs
