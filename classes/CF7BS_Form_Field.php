@@ -98,8 +98,6 @@ class CF7BS_Form_Field extends CF7BS_Component {
 					$maxlength = '';
 				}
 
-				$data_name = 'data-name="' . esc_attr( $id ) .'"';
-
 				$append = '';
 
 				if ( in_array( $status, array( 'success', 'warning', 'error' ) ) ) {
@@ -124,20 +122,25 @@ class CF7BS_Form_Field extends CF7BS_Component {
 					$append .= ' disabled';
 				}
 
+				$data_name = '';
+				if ( !empty($name)) {
+					$data_name = 'data-name="' . esc_attr( $name ) . '"';
+				}
+
 				if ( 'none' != $form_layout ) {
 					if ( 'horizontal' == $form_layout ) {
-						$output .= '<div class="form-group wpcf7-form-control-wrap' . $wrapper_class . $status . '" '  . $data_name + '>';
+						$output .= '<div class="form-group wpcf7-form-control-wrap' . $wrapper_class . $status . '" ' . $data_name . '>';
 						if ( ! empty( $label ) ) {
 							$output .= '<label class="' . esc_attr( $label_class ) . '"' . ( ! empty( $id ) ? ' for="' . esc_attr( $id ) . '"' : '' ) . '>' . wp_kses( $label, 'cf7bs_form_label' ) . $label_required . '</label>';
 						}
 						$output .= '<div class="' . esc_attr( $input_div_class ) . '">';
 					} elseif( 'inline' == $form_layout ) {
-						$output .= '<div class="form-group wpcf7-form-control-wrap' . $wrapper_class . $status . '" '  . $data_name + '>';
+						$output .= '<div class="form-group wpcf7-form-control-wrap' . $wrapper_class . $status . '" ' . $data_name . '>';
 						if ( ! empty( $label ) ) {
 							$output .= '<label class="' . esc_attr( $label_class ) . '"' . ( ! empty( $id ) ? ' for="' . esc_attr( $id ) . '"' : '' ) . '>' . wp_kses( $label, 'cf7bs_form_label' ) . $label_required . '</label>';
 						}
 					} else {
-						$output .= '<div class="form-group wpcf7-form-control-wrap' . $wrapper_class . $status . '" '  . $data_name + '>';
+						$output .= '<div class="form-group wpcf7-form-control-wrap' . $wrapper_class . $status . '" ' . $data_name . '>';
 						if ( ! empty( $label ) ) {
 							$rc_group_style = '';
 							if ( in_array( $type, array( 'radio', 'checkbox' ) ) ) {
